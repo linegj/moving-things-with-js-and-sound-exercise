@@ -1,45 +1,44 @@
-// Your code here
-
 "use strict";
-
 
 const dodger = document.getElementById("dodger");
 
-document.addEventListener("keydown", function (event) {
-        if (event.key === "ArrowLeft") {
-          const leftNumbers = dodger.style.left.replace("px", "");
-          const left = parseInt(leftNumbers, 10);
-      
-          dodger.style.left = `${left - 1}px`;
-        }
-});
-
 function moveDodgerLeft() {
-        const leftNumbers = dodger.style.left.replace("px", "");
-        const left = parseInt(leftNumbers, 10);
-      
-        if (left > 0) {
-          dodger.style.left = `${left - 1}px`; // 1px til venstre
-        }
+    const leftNumbers = dodger.style.left.replace("px", "");
+    const left = parseInt(leftNumbers, 10);
+  
+    if (left > 0) { // dodger går ikke ud over venstre kant
+        dodger.style.left = `${left - 1}px`; // 1px til venstre
+    }
 }
 
 function moveDodgerRight() {
     const leftNumbers = dodger.style.left.replace("px", ""); 
     const left = parseInt(leftNumbers, 10); 
   
-    if (left < 360) { // container = 400px og dodgeren= 40px 
-      dodger.style.left = `${left + 1}px`; // 1px til højre
+    if (left < 360) { // container = 400px og dodgeren= 40px (dodger går ikke ud over højre kant)
+        dodger.style.left = `${left + 1}px`; // 1px til højre
     }
-  }
-  
+}
+
+function moveDodgerUp() { 
+    const bottomNumbers = dodger.style.bottom.replace("px", ""); 
+    const bottom = parseInt(bottomNumbers, 10); 
+
+    if (bottom < 360) { 
+        dodger.style.bottom = `${bottom + 1}px`; // 1px opad
+    }
+}
 
 document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowLeft") { // Venstre
-      moveDodgerLeft();
+        moveDodgerLeft();
     }
   
     if (e.key === "ArrowRight") { // Højre
-      moveDodgerRight(); 
+        moveDodgerRight(); 
     }
-  });
-  
+
+    if (e.key === "ArrowUp") { // Op
+        moveDodgerUp(); 
+    } 
+});
