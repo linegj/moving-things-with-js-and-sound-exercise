@@ -29,6 +29,16 @@ function moveDodgerUp() {
     }
 }
 
+function moveDodgerDown() {
+    const bottomNumbers = dodger.style.bottom.replace("px", ""); 
+    const bottom = parseInt(bottomNumbers, 10); 
+  
+    if (bottom > 0) {
+      dodger.style.bottom = `${bottom - 1}px`; // 1px nedad
+    }
+  }
+  
+
 document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowLeft") { // Venstre
         moveDodgerLeft();
@@ -39,6 +49,10 @@ document.addEventListener("keydown", function (e) {
     }
 
     if (e.key === "ArrowUp") { // Op
+        moveDodgerUp(); 
+    } 
+
+    if (e.key === "ArrowDown") { // ned
         moveDodgerUp(); 
     } 
 });
