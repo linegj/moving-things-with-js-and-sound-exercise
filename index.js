@@ -8,6 +8,7 @@ function moveDodgerLeft() {
   
     if (left > 0) { // dodger går ikke ud over venstre kant
         dodger.style.left = `${left - 1}px`; // 1px til venstre
+        playSoundOnMovement();
     }
 }
 
@@ -17,6 +18,7 @@ function moveDodgerRight() {
   
     if (left < 360) { // container = 400px og dodgeren= 40px (dodger går ikke ud over højre kant)
         dodger.style.left = `${left + 1}px`; // 1px til højre
+        playSoundOnMovement();
     }
 }
 
@@ -26,6 +28,7 @@ function moveDodgerUp() {
 
     if (bottom < 360) { 
         dodger.style.bottom = `${bottom + 1}px`; // 1px opad
+        playSoundOnMovement();
     }
 }
 
@@ -35,6 +38,7 @@ function moveDodgerDown() {
   
     if (bottom > 0) {
       dodger.style.bottom = `${bottom - 1}px`; // 1px nedad
+      playSoundOnMovement();
     }
 }
   
@@ -56,3 +60,10 @@ document.addEventListener("keydown", function (e) {
         moveDodgerDown(); 
     } 
 });
+
+const movementSound = document.getElementById("movementSound");
+
+function playSoundOnMovement() {
+    movementSound.currentTime = 0; // starter forfra
+    movementSound.play(); 
+}
