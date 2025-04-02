@@ -8,7 +8,7 @@ function moveDodgerLeft() {
     const left = parseInt(leftNumbers, 10);
   
     if (left > 0) { // dodger går ikke ud over venstre kant
-        dodger.style.left = `${left - 1}px`; // 1px til venstre
+        dodger.style.left = `${left - 5}px`; // 5px til venstre
         playSoundOnMovement();
         checkCollision();
     }
@@ -19,7 +19,7 @@ function moveDodgerRight() {
     const left = parseInt(leftNumbers, 10); 
   
     if (left < 360) { // container = 400px og dodgeren= 40px (dodger går ikke ud over højre kant)
-        dodger.style.left = `${left + 1}px`; // 1px til højre
+        dodger.style.left = `${left + 5}px`; // 5px til højre
         playSoundOnMovement();
         checkCollision();
     }
@@ -30,7 +30,7 @@ function moveDodgerUp() {
     const bottom = parseInt(bottomNumbers, 10); 
 
     if (bottom < 360) { 
-        dodger.style.bottom = `${bottom + 1}px`; // 1px opad
+        dodger.style.bottom = `${bottom + 5}px`; // 5px opad
         playSoundOnMovement();
         checkCollision();
     }
@@ -41,7 +41,7 @@ function moveDodgerDown() {
     const bottom = parseInt(bottomNumbers, 10); 
   
     if (bottom > 0) {
-      dodger.style.bottom = `${bottom - 1}px`; // 1px nedad
+      dodger.style.bottom = `${bottom - 5}px`; // 5px nedad
       playSoundOnMovement();
       checkCollision();
     }
