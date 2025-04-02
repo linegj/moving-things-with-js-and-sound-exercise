@@ -36,7 +36,7 @@ function moveDodgerDown() {
     if (bottom > 0) {
       dodger.style.bottom = `${bottom - 1}px`; // 1px nedad
     }
-  }
+}
   
 
 document.addEventListener("keydown", function (e) {
@@ -53,6 +53,6 @@ document.addEventListener("keydown", function (e) {
     } 
 
     if (e.key === "ArrowDown") { // ned
-        moveDodgerUp(); 
+        moveDodgerDown(); 
     } 
 });
