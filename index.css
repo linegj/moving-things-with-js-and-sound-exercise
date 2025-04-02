@@ -59,3 +59,14 @@
   width: 9px;
 }
 
+.point {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+}
+
+
